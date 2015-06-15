@@ -34,10 +34,9 @@
 		<copy todir="C:\Selenium\workspace3\TechM_TestNG_Framework\ant\build\lib">
 			<fileset dir="C:\Selenium\workspace3\TechM_TestNG_Framework\src\com\lib" includes="**/*.jar"></fileset>
 		</copy>
-		<copy todir="C:\Selenium\workspace3\TechM_TestNG_Framework\ant\build" overwrite="true">
-			<!--<fileset dir="C:\Selenium\workspace3\TechM_TestNG_Framework\" includes="**/*.jar"></fileset>
-			<fileset dir="C:\Selenium\workspace3\TechM_TestNG_Framework\" includes="**/testng-listeners.xml"></fileset>-->
-			<fileset dir="C:\Selenium\workspace3\TechM_TestNG_Framework\ant\build" includes="**/test*.xml"></fileset>
+		
+		<copy todir=".">
+			<fileset dir="C:\Selenium\workspace3\TechM_TestNG_Framework" includes="test*.xml"></fileset>
 		</copy>
 	</target>
 
@@ -59,7 +58,7 @@
 	
 	<target name="run" depends="compile">
 		<Test-Ng outputdir="test-output" classpathref="classp">
-			<xmlfileset dir="${basedir}" includes="**/test*.xml"/>
+			<xmlfileset dir="." includes="test*.xml"/>
 		</Test-Ng>
 	</target>
 	
